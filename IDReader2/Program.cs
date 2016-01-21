@@ -16,7 +16,15 @@ namespace IDReader2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view.LoginForm());
+
+            //auto hotel
+            model.Manager user = new model.Manager();
+            user.Account = "trainning";
+            user.Passwd = "trainning";
+            user.Day = 3;
+            user.Id = 1;
+            user.Type = 2;
+            Application.Run(new view.TrainForm());
         }
     }
 }

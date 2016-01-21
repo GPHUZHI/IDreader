@@ -74,7 +74,7 @@
             this.LoginBtn.TabIndex = 4;
             this.LoginBtn.Text = "登陆";
             this.LoginBtn.UseVisualStyleBackColor = true;
-            this.LoginBtn.Click += new System.EventHandler(this.LoginAction);
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // LoginPWD
             // 
@@ -83,13 +83,17 @@
             this.LoginPWD.PasswordChar = '*';
             this.LoginPWD.Size = new System.Drawing.Size(107, 21);
             this.LoginPWD.TabIndex = 3;
+            this.LoginPWD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckPWD_KEYPress);
             // 
             // LoginAccount
             // 
+            this.LoginAccount.ForeColor = System.Drawing.Color.Black;
             this.LoginAccount.Location = new System.Drawing.Point(71, 48);
+            this.LoginAccount.MaxLength = 20;
             this.LoginAccount.Name = "LoginAccount";
             this.LoginAccount.Size = new System.Drawing.Size(107, 21);
             this.LoginAccount.TabIndex = 2;
+            this.LoginAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckAccount_KEYPress);
             // 
             // login_pwd_title
             // 
@@ -115,7 +119,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(226, 214);
             this.Controls.Add(this.logingroup);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登陆";
             this.logingroup.ResumeLayout(false);
             this.logingroup.PerformLayout();

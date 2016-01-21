@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IDReader2.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,21 @@ namespace IDReader2.view
 {
     public partial class SupperForm : Form
     {
+        private Manager user;
         public SupperForm()
         {
             InitializeComponent();
         }
-
-        private void statusStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        public Manager User
         {
-
+            set
+            {
+                user = value;
+            }
+            get
+            {
+                return user;
+            }
         }
     }
 }
